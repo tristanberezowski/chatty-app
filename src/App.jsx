@@ -1,7 +1,7 @@
 //Main Application Script File
 
 import React, {Component} from 'react';
-import Footer from './Footer.jsx'
+import ChatBar from './ChatBar.jsx'
 import MessageList from './MessageList.jsx'
 import NavBar from './NavBar.jsx'
 
@@ -43,7 +43,8 @@ class App extends Component {
           type: "incomingNotification",
           content: "Anonymous2 changed their name to NotFunny",
         }
-      ]
+      ],
+
     }
   }
   render() {
