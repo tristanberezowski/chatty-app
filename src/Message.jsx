@@ -10,4 +10,10 @@ class Message extends Component {
     );
   }
 }
+/*
+<div class="message system">
+    Anonymous1 changed their name to nomnom.
+</div>
+*/
+
 export default Message;

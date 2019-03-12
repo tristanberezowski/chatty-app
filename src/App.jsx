@@ -3,6 +3,7 @@
 import React, {Component} from 'react';
 import Footer from './Footer.jsx'
 import MessageList from './MessageList.jsx'
+import NavBar from './NavBar.jsx'
 
 class App extends Component {
   constructor(props) {
@@ -48,6 +49,7 @@ class App extends Component {
   render() {
     return (
       <div>
+      <NavBar />
       <MessageList />
       <Footer />
       </div>
