@@ -51,7 +51,7 @@ class App extends Component {
           content: "Anonymous2 changed their name to NotFunny",
         }
       ],
-      currentUser: "Tristan"
+      currentUser: "Anonymous User"
     }
     this.addMessage = this.addMessage.bind(this);
     this.newMessageId = this.newMessageId.bind(this);
@@ -61,10 +61,10 @@ class App extends Component {
   newMessageId() {
     return this.state.messages[this.state.messages.length - 1].id + 1;
   }
-  
+
   userChange(event) {
     this.setState({
-      currentUser: event.target.value
+      currentUser: event.target.value ? event.target.value : "Anonymous User"
     })
   }
 
