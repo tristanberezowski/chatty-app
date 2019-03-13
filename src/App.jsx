@@ -53,13 +53,38 @@ class App extends Component {
       ],
       currentUser: "Tristan"
     }
+    this.addMessage = this.addMessage.bind(this);
+    this.newMessageId = this.newMessageId.bind(this);
+    this.userChange = this.userChange.bind(this);
+  }//end of constructor
+
+  newMessageId() {
+    return this.state.messages[this.state.messages.length - 1].id + 1;
   }
+  
+  userChange(event) {
+    this.setState({
+      currentUser: event.target.value
+    })
+  }
+
+  addMessage(content) {
+    this.setState({
+      messages: this.state.messages.concat({
+        id: this.newMessageId(),
+        username: this.state.currentUser,
+        content: content,
+        type: "incomingMessage"
+      })
+    })
+  }
+
   render() {
     return (
       <div>
       <NavBar />
       <MessageList messages={this.state.messages} />
-      <ChatBar currentUser={this.state.currentUser} />
+      <ChatBar currentUser={this.state.currentUser} addMessage={this.addMessage} userChange={this.userChange}/>
       </div>
     );
   }
