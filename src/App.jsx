@@ -1,6 +1,6 @@
 //Main Application Script File
 
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import ChatBar from './ChatBar.jsx'
 import MessageList from './MessageList.jsx'
 import NavBar from './NavBar.jsx'
@@ -57,6 +57,11 @@ class App extends Component {
     this.newMessageId = this.newMessageId.bind(this);
     this.userChange = this.userChange.bind(this);
   }//end of constructor
+
+  componentDidMount() {
+    const socket = new WebSocket("ws://localhost:3001");
+    console.log("Connected to ws server");
+  }
 
   newMessageId() {
     return this.state.messages[this.state.messages.length - 1].id + 1;

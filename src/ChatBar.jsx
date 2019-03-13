@@ -2,6 +2,13 @@ import React, {Component} from 'react';
 
 class ChatBar extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      
+    }
+  }
+
   checkKey = (event) => {
     if(event.key === "Enter") {
       this.props.addMessage(event.target.value);
