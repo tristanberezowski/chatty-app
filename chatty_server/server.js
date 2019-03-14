@@ -1,5 +1,5 @@
 //WebSockets Server
-
+const uuid = require('uuid/v4');
 const express = require('express');
 const SocketServer = require('ws').Server;
 
@@ -20,6 +20,11 @@ const wss = new SocketServer({ server });
 // the ws parameter in the callback.
 wss.on('connection', (ws) => {
   console.log('Client connected');
+  ws.on('message', (message) => {
+    message = JSON.parse(message);
+    message.id = uuid();
+    wss.clients.forEach((client) => client.send(JSON.stringify(message)));
+  });
 
   // Set up a callback for when a client closes the socket. This usually means they closed their browser.
   ws.on('close', () => console.log('Client disconnected'));

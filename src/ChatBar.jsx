@@ -9,17 +9,29 @@ class ChatBar extends Component {
     }
   }
 
-  checkKey = (event) => {
+  newMessage = (event) => {
     if(event.key === "Enter") {
-      this.props.addMessage(event.target.value);
+      let msg = JSON.stringify({
+        content: event.target.value,
+        username: this.props.currentUser,
+        type: 'incoming-message'
+      });
+      this.props.socket.send(msg);
+      event.target.value = '';
+    }
+  }
+
+  changeName = (event) => {
+    if(event.key === "Enter") {
+      this.props.userChange(event);
     }
   }
 
   render() {
     return (
       <footer className="chatbar">
-        <input className="chatbar-username" placeholder="Your Name (Optional)" onChange={this.props.userChange} />
-        <input className="chatbar-message" placeholder="Type a message and hit ENTER" onKeyDown={(event) => this.checkKey(event)}/>
+        <input className="chatbar-username" placeholder="Your Name (Optional)" onKeyDown={this.changeName} />
+        <input className="chatbar-message" placeholder="Type a message and hit ENTER" onKeyDown={(event) => this.newMessage(event)}/>
       </footer>
     );
   }
