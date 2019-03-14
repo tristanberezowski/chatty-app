@@ -24,7 +24,12 @@ class App extends Component {
     this.setState({socket});
     socket.onmessage = (newMessage) => {
       newMessage = JSON.parse(newMessage.data);
-      this.addMessage(newMessage);
+      if (newMessage.type === "online-users") {
+        console.log(newMessage.content);
+      }
+      else {
+        this.addMessage(newMessage);
+      }
     }
   }
 
