@@ -12,7 +12,7 @@ class Message extends Component {
 
     switch (type) {
       case 'name-change':
-        return (<span className={"message-content " + type}>{content} changed their name to {username}</span>);
+        return (<span className="message-content system" > {content} changed their name to {username} </span>);
       default:
         return (
           <React.Fragment>

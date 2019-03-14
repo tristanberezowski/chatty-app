@@ -1,14 +1,20 @@
+$primary-medium: #028090;
+$primary-light: #F0F3BD;
+$primary-dark: #05668D;
+$secondary-medium: #00A896;
+$secondary-light: #02C39A;
+
 body {
-  background: white;
-  color: black;
+  background: $primary-dark;
+  color: $primary-light;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   margin: 70px 0;
 }
 
 .chatbar {
-  background: tomato;
-  border-top: 1px solid black;
+  background: $primary-medium;
+  border-top: 1px solid $secondary-medium;
   bottom: 0;
   display: flex;
   left: 0;
@@ -19,7 +25,9 @@ body {
 
 .chatbar-message,
 .chatbar-username {
-  border: 1px solid black;
+  border: 1px solid $secondary-medium;
+  background-color: $primary-dark;
+  color: $primary-light;
   display: block;
   height: 40px;
   line-height: 40px;
@@ -38,12 +46,15 @@ body {
 .message {
   display: flex;
   padding: 5px;
+  .system {
+    font-style: italic;
+  }
 }
 
 .message.system {
-  font-style: italic;
   padding: 5px 20px;
 }
+
 
 .message-content,
 .message-username {
@@ -54,6 +65,7 @@ body {
 
 .message-content {
   flex: 8;
+  padding-bottom: 1px;
 }
 
 .message-username {
@@ -62,7 +74,7 @@ body {
 }
 
 .navbar {
-  background: tomato;
+  background: $primary-medium;
   border-bottom: 1px solid black;
   height: 60px;
   left: 0;
