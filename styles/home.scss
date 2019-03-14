@@ -82,6 +82,15 @@ body {
   position: fixed;
   right: 0;
   top: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-counter {
+  align-self: flex-end;
+  padding-bottom: 6px;
+  font-weight: 600;
+  font-size: 1.3em;
 }
 
 .navbar-brand {

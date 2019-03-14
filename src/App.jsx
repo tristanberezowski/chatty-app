@@ -11,7 +11,7 @@ class App extends Component {
     this.state = {
       messages: [],
       currentUser: "Anonymous User",
-      socket: {}
+      socket: {},
     }
     this.addMessage = this.addMessage.bind(this);
     this.userChange = this.userChange.bind(this);
@@ -25,7 +25,7 @@ class App extends Component {
     socket.onmessage = (newMessage) => {
       newMessage = JSON.parse(newMessage.data);
       if (newMessage.type === "online-users") {
-        console.log(newMessage.content);
+        this.setState({ onlineUsers: newMessage.content});
       }
       else {
         this.addMessage(newMessage);
@@ -53,7 +53,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavBar />
+        <NavBar onlineUsers={this.state.onlineUsers} />
         <MessageList messages={this.state.messages} />
         <ChatBar currentUser={this.state.currentUser} addMessage={this.addMessage} userChange={this.userChange} socket={this.state.socket}/>
       </div>
