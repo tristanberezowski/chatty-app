@@ -17,6 +17,7 @@ class App extends Component {
     this.userChange = this.userChange.bind(this);
   }//end of constructor
 
+  //After page has been rendered for the first time connect to ws and listen for messages
   componentDidMount() {
     const socket = new WebSocket("ws://localhost:3001");
     console.log("Connected to ws server");
@@ -47,9 +48,9 @@ class App extends Component {
   render() {
     return (
       <div>
-      <NavBar />
-      <MessageList messages={this.state.messages} />
-      <ChatBar currentUser={this.state.currentUser} addMessage={this.addMessage} userChange={this.userChange} socket={this.state.socket}/>
+        <NavBar />
+        <MessageList messages={this.state.messages} />
+        <ChatBar currentUser={this.state.currentUser} addMessage={this.addMessage} userChange={this.userChange} socket={this.state.socket}/>
       </div>
     );
   }

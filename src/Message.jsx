@@ -1,11 +1,32 @@
 import React, {Component} from 'react';
 
 class Message extends Component {
+
+  constructor(props) {
+    super(props);
+    this.formatMessage = this.formatMessage.bind(this);
+  }
+
+  formatMessage() {
+    let { content, username, type } = this.props.message;
+
+    switch (type) {
+      case 'name-change':
+        return (<span className={"message-content " + type}>{content} changed their name to {username}</span>);
+      default:
+        return (
+          <React.Fragment>
+            <span className="message-username">{username}</span>
+            <span className={"message-content " + type}>{content}</span>
+          </React.Fragment>
+        );
+    }
+  }
+
   render() {
     return (
       <div className="message">
-        <span className="message-username">{this.props.message.username}</span>
-        <span className={"message-content " + this.props.message.type}>{this.props.message.content}</span>
+        {this.formatMessage()}
       </div>
     );
   }

@@ -1,13 +1,8 @@
 import React, {Component} from 'react';
 
 class ChatBar extends Component {
+// props: currentUser, socket, addMessage, userChange
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      
-    }
-  }
 
   newMessage = (event) => {
     if(event.key === "Enter") {
@@ -23,6 +18,12 @@ class ChatBar extends Component {
 
   changeName = (event) => {
     if(event.key === "Enter") {
+      let msg = JSON.stringify({
+        content: this.props.currentUser,
+        username: event.target.value,
+        type: 'name-change'
+      });
+      this.props.socket.send(msg);
       this.props.userChange(event);
     }
   }
@@ -30,8 +31,8 @@ class ChatBar extends Component {
   render() {
     return (
       <footer className="chatbar">
-        <input className="chatbar-username" placeholder="Your Name (Optional)" onKeyDown={this.changeName} />
-        <input className="chatbar-message" placeholder="Type a message and hit ENTER" onKeyDown={(event) => this.newMessage(event)}/>
+        <input className="chatbar-username" placeholder="Your user-name (optional)" onKeyDown={this.changeName} />
+        <input className="chatbar-message" placeholder="Type a message and hit ENTER" onKeyDown={this.newMessage}/>
       </footer>
     );
   }
