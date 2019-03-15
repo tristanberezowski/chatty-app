@@ -16,7 +16,7 @@ Tech Stack
 Usage
 -------------------
 
-Install the dependencies in both the root directory and chatty_server./s/s
+Install the dependencies in both the root directory and chatty_server.<br />   
 Then start both servers (in two terminals) and open http://localhost:3000
 
 ##### Terminal A
