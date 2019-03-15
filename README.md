@@ -16,15 +16,15 @@ Tech Stack
 Usage
 -------------------
 
-Install the dependencies in both the root directory and chatty_server.
+Install the dependencies in both the root directory and chatty_server./s/s
 Then start both servers (in two terminals) and open http://localhost:3000
 
-Terminal A
+##### Terminal A
 ```
 npm install
 npm start
 ```
-Terminal B
+##### Terminal B
 ```
 cd chatty_server
 npm install
@@ -34,13 +34,13 @@ npm start
 Dependencies
 -------------------
 
-###### In Root
+##### In Root
 * React
 * Webpack
 * [babel-loader](https://github.com/babel/babel-loader)
 * [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
 
-###### In WS Server - chatty_server
+##### In WS Server - chatty_server
 * ws
 * express
 * uuid
