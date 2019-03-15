@@ -9,7 +9,8 @@ A single page web application that makes use of WebSockets for real time chattin
 * JSX with Babel
 * SASS
 * Node.js
-* WebSocket
+* WebSockets
+* Express
 
 ### Usage
 
@@ -30,8 +31,13 @@ npm start
 
 ### Dependencies
 
+###### In Root
 * React
 * Webpack
 * [babel-loader](https://github.com/babel/babel-loader)
 * [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
+
+###### In WS Server - chatty_server
+* ws
+* express
 * uuid
