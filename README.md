@@ -41,3 +41,7 @@ npm start
 * ws
 * express
 * uuid
+
+### Chatty In Action
+
+![Gif of Chatty In Action](https://github.com/tristanberezowski/chatty-app/blob/master/demo.gif)
