@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 class NavBar extends Component {
+  // props: onlineUsers
   render() {
     return (
       <nav className="navbar">
@@ -10,5 +11,4 @@ class NavBar extends Component {
     )
   }
 }
-
-export default NavBar;
+export default NavBar

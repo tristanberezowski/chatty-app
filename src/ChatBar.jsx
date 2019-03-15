@@ -3,7 +3,6 @@ import React, {Component} from 'react';
 class ChatBar extends Component {
 // props: currentUser, socket, addMessage, userChange
 
-
   newMessage = (event) => {
     if(event.key === "Enter") {
       let msg = JSON.stringify({

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 class Message extends Component {
-
+//props: message = {content, type, username}
   constructor(props) {
     super(props);
     this.formatMessage = this.formatMessage.bind(this);
@@ -31,10 +31,4 @@ class Message extends Component {
     );
   }
 }
-/*
-<div class="message system">
-    Anonymous1 changed their name to nomnom.
-</div>
-*/
-
 export default Message;

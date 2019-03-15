@@ -15,12 +15,11 @@ class App extends Component {
     }
     this.addMessage = this.addMessage.bind(this);
     this.userChange = this.userChange.bind(this);
-  }//end of constructor
+  }
 
   //After page has been rendered for the first time connect to ws and listen for messages
   componentDidMount() {
     const socket = new WebSocket("ws://localhost:3001");
-    console.log("Connected to ws server");
     this.setState({socket});
     socket.onmessage = (newMessage) => {
       newMessage = JSON.parse(newMessage.data);
@@ -32,7 +31,7 @@ class App extends Component {
       }
     }
   }
-
+  
   userChange(event) {
     this.setState({
       currentUser: event.target.value ? event.target.value : "Anonymous User"
