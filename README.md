@@ -3,7 +3,8 @@ Chatty App
 
 A single page web application that makes use of WebSockets for real time chatting between users.
 
-### Tech Stack
+Tech Stack
+-------------------
 
 * React
 * JSX with Babel
@@ -12,7 +13,8 @@ A single page web application that makes use of WebSockets for real time chattin
 * WebSockets
 * Express
 
-### Usage
+Usage
+-------------------
 
 Install the dependencies in both the root directory and chatty_server.
 Then start both servers (in two terminals) and open http://localhost:3000
@@ -29,7 +31,8 @@ npm install
 npm start
 ```
 
-### Dependencies
+Dependencies
+-------------------
 
 ###### In Root
 * React
@@ -42,6 +45,7 @@ npm start
 * express
 * uuid
 
-### Chatty In Action
+Chatty In Action
+-------------------
 
 ![Gif of Chatty In Action](https://github.com/tristanberezowski/chatty-app/blob/master/demo.gif)
